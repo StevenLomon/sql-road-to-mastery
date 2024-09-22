@@ -6,5 +6,8 @@ List of courses:
 * Level Up: SQL by Scott Simpson: https://www.linkedin.com/learning/level-up-sql
 * SQL Practice: Intermediate Queries: https://www.linkedin.com/learning/sql-practice-intermediate-queries
 
+List of YouTube videos:
+* Window functions by Maven Analytics: https://www.youtube.com/watch?v=rIcB4zMYMas
+
 List of links:  
 * https://advancedsqlpuzzles.com/
