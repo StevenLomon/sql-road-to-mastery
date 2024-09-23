@@ -229,3 +229,31 @@ FROM
 WHERE PopularityWithinCentury <= 1;
 
 -- That is bonkers haha. And that is window functions!
+
+-- As a final thing, we can re-write the CASE like this:
+(CAST((Published / 100) AS INT) * 100) || 's' AS Century
+
+-- In the full final query:
+WITH BookCountsByCentury AS (
+	SELECT
+		(CAST((Published / 100) AS INT) * 100) || 's' AS Century,
+		Title,
+		Author,
+		Published,
+		COUNT(Title) AS BookCount
+	FROM
+		Books
+	GROUP BY
+		Century, Title
+)
+SELECT
+	Century,
+	Title,
+	Author,
+	Published,
+	BookCount,
+	DENSE_RANK() OVER (PARTITION BY Century ORDER BY BookCount DESC) AS PopularityWithinCentury
+FROM
+	BookCountsByCentury;
+
+-- Bonkers bananas haha
