@@ -5,6 +5,7 @@ List of courses:
 * SQL Essentials Training by Walter Shields: https://www.linkedin.com/learning/sql-essential-training-20685933
 * Level Up: SQL by Scott Simpson: https://www.linkedin.com/learning/level-up-sql
 * SQL Practice: Intermediate Queries: https://www.linkedin.com/learning/sql-practice-intermediate-queries
+* Level Up: Advanced SQL by Jess Pomfret: https://www.linkedin.com/learning/level-up-advanced-sql
 
 List of YouTube videos:
 * Window functions by Maven Analytics: https://www.youtube.com/watch?v=rIcB4zMYMas
