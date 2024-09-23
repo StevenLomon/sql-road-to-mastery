@@ -1,4 +1,4 @@
-# SQL Road to Mastery
+# SQL Road to Mastery 🚀
 A repository of all SQL files from courses and SQL Puzzles I can find online with my answers to them
 
 List of courses:  
