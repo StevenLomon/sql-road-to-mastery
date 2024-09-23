@@ -38,11 +38,13 @@ ORDER BY
 -- in the sales table to see how many cars they've sold. I assume that every record in the sales table is one
 -- car sold. So let's remove the inventory table JOIN:
 
+-- Retroactively now being on 2-3; let's create a VIEW out of this!
+CREATE VIEW V_employees_and_car_sales AS
 SELECT
 	e.employeeId,
 	e.firstName,
 	e.lastName,
-	COUNT(s.employeeId) AS carsSold
+	COUNT(*) AS carsSold
 FROM 
 	employee AS e
 INNER JOIN
@@ -51,8 +53,23 @@ ON
 	e.employeeId = s.employeeId
 GROUP BY
 	e.employeeId
-ORDER BY
-	e.employeeId;
+	
+CREATE VIEW V_employees_and_car_sales_2023 AS
+SELECT
+	e.employeeId,
+	e.firstName,
+	e.lastName,
+	COUNT(*) AS carsSold
+FROM 
+	employee AS e
+INNER JOIN
+	sales AS s
+ON
+	e.employeeId = s.employeeId
+WHERE
+	s.soldDate BETWEEN DATE('2023-01-01') AND DATE('2023-12-31')
+GROUP BY
+	e.employeeId
 	
 -- That's it!
 -- The brief mentions NOTHING about ordering by number of cars sold with the most at the top but since she does
